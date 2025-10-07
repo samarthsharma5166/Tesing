@@ -36,10 +36,10 @@ jobs:
 
       - name: Build backend image
         working-directory: backend
-        run: docker build -t backend-image ./backend
+        run: docker build -t backend-image .
 
       - name: Build frontend image
         working-directory: frontend
-        run: docker build -t frontend-image ./frontend
+        run: docker build -t frontend-image .
 
       
