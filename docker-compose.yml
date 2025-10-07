@@ -1,0 +1,18 @@
+services:
+  backend:
+    image: my-backend-image:latest
+    build: ./backend
+    container_name: backend
+    restart: always
+    ports:
+      - "3000:3000"
+  
+  frontend:
+    image: my-frontend-image:latest
+    build: ./frontend
+    container_name: frontend
+    restart: always
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
