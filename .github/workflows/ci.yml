@@ -66,6 +66,8 @@ jobs:
 
       - name: Deploy on EC2 (git pull and docker compose up -d --build)
         run: |  
+          echo ec2_key.pem
+          echo ${EC2_USER}@${EC2_HOST}
           ssh -i ec2_key.pem ${EC2_USER}@${EC2_HOST} << 'EOF'
             set -e
             cd ${EC2_APP_DIR}
