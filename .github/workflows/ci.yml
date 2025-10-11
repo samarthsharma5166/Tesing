@@ -59,6 +59,7 @@ jobs:
 
       - name: Write SSH Key
         run: |
+          cat "${EC2_KEY}"
           echo "${EC2_KEY}" > Tesing.pem
           chmod 600 Tesing.pem
         env:
@@ -70,7 +71,7 @@ jobs:
             EC2_HOST: ${{ secrets.EC2_HOST }}
             EC2_APP_DIR: ${{ secrets.EC2_APP_DIR }}
         run: |
-          cat Tesing.pem
+          echo cat Tesing.pem
           echo "Deploying to EC2 instance..."
           ssh -i Tesing.pem ${secrets.EC2_USER}@${EC2_HOST} << 'EOF'
           set -e
