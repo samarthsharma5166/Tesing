@@ -71,9 +71,9 @@ jobs:
             EC2_APP_DIR: ${{ secrets.EC2_APP_DIR }}
         run: |
           echo "SSH key written successfully. Preview:"
-          head -n 2 Tesing.pem
+          head -n 6 Tesing.pem
           echo "..."
-          tail -n 2 Tesing.pem
+          tail -n 6 Tesing.pem
           echo "Deploying to EC2 instance..."
           ssh -i Tesing.pem ${secrets.EC2_USER}@${EC2_HOST} << 'EOF'
           set -e
