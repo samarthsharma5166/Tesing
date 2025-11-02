@@ -51,7 +51,6 @@ jobs:
 
       - name: add ec2 host to known hosts
         run: |
-          echo "$EC2_HOST"
           mkdir -p ~/.ssh
           ssh-keyscan -H "$EC2_HOST" >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts 
